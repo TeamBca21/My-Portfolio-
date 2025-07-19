@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans antialiased;
+    @apply bg-secondary-900 text-white;
+    @apply overflow-x-hidden;
+  }
+  
+  * {
+    @apply border-secondary-800;
+  }
+}
+
+@layer components {
+  .glass-morphism {
+    @apply bg-white/10 backdrop-blur-md border border-white/20;
+    @apply shadow-xl shadow-black/20;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-400 via-accent-400 to-primary-600;
+    @apply bg-clip-text text-transparent;
+  }
+  
+  .section-padding {
+    @apply px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16;
+  }
+  
+  .container-max {
+    @apply max-w-7xl mx-auto;
+  }
+  
+  .btn-primary {
+    @apply bg-gradient-to-r from-primary-500 to-primary-600;
+    @apply hover:from-primary-600 hover:to-primary-700;
+    @apply text-white font-semibold py-3 px-6 rounded-lg;
+    @apply transition-all duration-300 ease-in-out;
+    @apply shadow-lg hover:shadow-xl;
+    @apply border border-primary-400/20;
+  }
+  
+  .btn-secondary {
+    @apply bg-transparent border-2 border-primary-400;
+    @apply hover:bg-primary-400 hover:text-secondary-900;
+    @apply text-primary-400 font-semibold py-3 px-6 rounded-lg;
+    @apply transition-all duration-300 ease-in-out;
+  }
+  
+  .skill-card {
+    @apply glass-morphism rounded-xl p-6;
+    @apply hover:scale-105 transition-all duration-300;
+    @apply hover:shadow-2xl hover:shadow-primary-500/20;
+  }
+  
+  .project-card {
+    @apply glass-morphism rounded-2xl overflow-hidden;
+    @apply hover:scale-[1.02] transition-all duration-500;
+    @apply hover:shadow-2xl hover:shadow-primary-500/30;
+    @apply group cursor-pointer;
+  }
+}
+
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+  }
+  
+  .animation-delay-200 {
+    animation-delay: 200ms;
+  }
+  
+  .animation-delay-400 {
+    animation-delay: 400ms;
+  }
+  
+  .animation-delay-600 {
+    animation-delay: 600ms;
+  }
+  
+  .animation-delay-800 {
+    animation-delay: 800ms;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-secondary-800;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-b from-primary-500 to-primary-700 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply from-primary-400 to-primary-600;
+}
+
+/* Selection styles */
+::selection {
+  @apply bg-primary-500 text-white;
+}
+
+/* Focus styles */
+*:focus-visible {
+  @apply outline-none ring-2 ring-primary-400 ring-offset-2 ring-offset-secondary-900;
+}
